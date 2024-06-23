@@ -1,3 +1,4 @@
+
 import BestSelling from "@/components/bestSelling";
 import Categories from "@/components/categories";
 import FeatureProducts from "@/components/featureProducts";
@@ -6,7 +7,7 @@ import Promotion from "@/components/promotion";
 import Services from "@/components/services";
 
 
-// install reacticones / shadcn/ui /  daisy ui / use of tailblock and react icons / for image unsplash/ for animation we use tailwindcss and install Redux Toolkit/ go to typescript quick start / create a folder name store in app.
+// install reacticones / shadcn/ui /  daisy ui / use of tailblock and react icons / for image unsplash/ for animation we use tailwindcss and install Redux Toolkit/ go to typescript quick start / create a folder name store in app. install toast for add to cart notification from npm react toastify.
 export default function Home() {
   return (
     <div>

@@ -1,16 +1,16 @@
 "use client"
-import { addToCart } from '@/app/store/features/cart';
-import { useAppDispatch, useAppSelector } from '@/app/store/hooks';
+import { useAppSelector } from '@/app/store/hooks';
 import SlugComponent from '@/components/slugComponent';
+import ToastAddToCart from '@/components/toastAddToCart';
 import { Button } from '@/components/ui/button'
 import { useState } from 'react';
-import { FaShoppingCart,FaHeart,FaMinusCircle, FaPlusCircle } from "react-icons/fa";
+import { FaHeart,FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 
 
 const SlugPage = ({params}:{params:{slug:string}}) => {
     const product = useAppSelector((state)=>state.productArray);
     const slug = product.filter((val)=>val.slug == params.slug)
-    const dispatch = useAppDispatch();
+    
 
     const [cartItem, setCartItem] = useState({
       
@@ -130,12 +130,14 @@ Add
     </div>
           
           {/* button add to cart */}
-          <Button
+          {/* <Button
           onClick={()=>dispatch(addToCart(cartItem))} 
           className='group bg-myBlackhead hover:bg-transparent text-myWhite hover:text-myBlackhead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl'>
 <FaShoppingCart className='mr-2 h-4 w-4 group-hover:text-myOrange duration-300'/>
 Add to Cart
-</Button>
+</Button> */}
+{/* render toast for notification of confirmation */}
+<ToastAddToCart cartItem={cartItem}/>
         </div>
         {/* button buy now */}
         <Button className='mt-3 w-full group bg-myBlackhead hover:bg-transparent text-myWhite hover:text-myBlackhead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl'>
