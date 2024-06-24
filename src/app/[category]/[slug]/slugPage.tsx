@@ -129,14 +129,9 @@ Add
     </span>)}
     </div>
           
-          {/* button add to cart */}
-          {/* <Button
-          onClick={()=>dispatch(addToCart(cartItem))} 
-          className='group bg-myBlackhead hover:bg-transparent text-myWhite hover:text-myBlackhead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl'>
-<FaShoppingCart className='mr-2 h-4 w-4 group-hover:text-myOrange duration-300'/>
-Add to Cart
-</Button> */}
+    {/* button add to cart */}
 {/* render toast for notification of confirmation */}
+          
 <ToastAddToCart cartItem={cartItem}/>
         </div>
         {/* button buy now */}

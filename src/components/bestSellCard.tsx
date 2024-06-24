@@ -1,8 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import { Button } from './ui/button'
-import { FaShoppingCart,FaHeart } from "react-icons/fa";
+import {FaHeart } from "react-icons/fa";
 import Link from 'next/link';
+import PopoverAddToCart from './popoverAddToCart';
 
 interface iprops{
   src:string;
@@ -55,10 +56,11 @@ const BestSellCard = ({src,alt,title,description,price,category,slug,discount}:i
 </div>
 </Link>
 {/* button div */}
-<Button className='group bg-myBlackhead hover:bg-transparent text-myWhite hover:text-myBlackhead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl absolute bottom-2 right-2 '>
-<FaShoppingCart className='mr-2 h-4 w-4 group-hover:text-myOrange duration-300'/>
-Add to Cart
-</Button>
+<div className='absolute bottom-2 right-2'>
+
+<PopoverAddToCart slug = {slug}/>
+
+</div>
 <Button className='group bg-myBlackhead hover:bg-transparent text-myWhite hover:text-myBlackhead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl absolute bottom-2 left-2 '>
 <FaHeart className='mr-2 h-4 w-4 group-hover:text-myOrange duration-300'/>
 Buy Now

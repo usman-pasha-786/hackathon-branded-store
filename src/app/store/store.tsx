@@ -1,14 +1,29 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import productSlice from './features/product'
 import cartSlice from './features/cart'
+import storage from 'redux-persist/lib/storage'
+import {persistReducer} from 'redux-persist'
+import { version } from 'os'
 
+
+const persistConfig = {
+  key: "root",
+  version: 1,
+  storage,
+}
+
+const reducer = combineReducers({
+  productArray:productSlice,
+    cartArray:cartSlice,
+})
+
+const persistedReducer = persistReducer(persistConfig,reducer)
 
 export const store = configureStore({
-  reducer:{
-    // define state or data. state mean data in redux 
-    productArray:productSlice,
-    cartArray:cartSlice,
-  }
+  reducer: persistedReducer,
+  
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({ serializableCheck:false}),
 })
 
 

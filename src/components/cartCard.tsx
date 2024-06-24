@@ -19,7 +19,7 @@ const CartCard = () => {
                         className='flex px-10 py-3'>
                         {/* image */}
                         <Image src={item.image} alt={item.title} width={80} height={80}
-                            className='w-[250px] h-[250px]' />
+                            className='w-[100px] h-[100px]' />
                         {/* some information */}
                         <div className='flex px-5 justify-between items-center w-full'>
                             <div>{/* title */}
